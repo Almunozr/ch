@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CH_ALEX</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- iconos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <!-- llamo a los estilos -->
+  <link rel="stylesheet" href="estilos.css">
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button type="button" class="btn btn-outline-primary dropdown-toggle " data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Archivo
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" onclick="document.getElementById('idAbrir').click()">Abrir</a></li>
+        <input id="idAbrir" type="file" accept=".ch" style="display: none;">
+      </ul>
+      <button type="button" class="btn btn-outline-primary" id="ejecute" onclick="ejecutar()">Ejecute</button>
+      <button type="button" class="btn btn-outline-primary" onclick="apareceMemoria()">Muestre Memoria</button>
+      <button type="button" class="btn btn-outline-primary">Pausa</button>
+      <button type="button" class="btn btn-outline-primary">PasoaPaso</button>
+      <button type="button" class="btn btn-outline-primary" onclick="window.close()">Salir</button>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <form action="" method="post" class=" formulario col-6">
+            <div class="mb-3">
+              <label for="memoria" class="form-label">Memoria</label>
+              <input type="number" name="memoria" class="form-control" id="idMemoria" value="100" min="1" max="1100"
+                required>
+            </div>
+            <div class="mb-3">
+              <label for="kernel" class="form-label">Kernel</label>
+              <input type="number" name="kernel" class="form-control" id="idKernel" value="10" min="1" max="1100"
+                required>
+            </div>
+            <button type="button" onclick="leeMemorias()" class="btn btn-primary" name="guardar">Aplicar
+              Memoria</button>
+          </form>
+          <section class="col-6 ">
+            <div class="row">
+              <h5 class="col">Acumulador</h5>
+              <p class="col" id="idAcumulador">0000000</p>
+            </div>
+            <p class="row" id="nomArch">[nungun archivo .ch]</p>
+            <div class="row ">
+              <span class="col-2">PC</span>
+              <p class="col">nueva unidad 1 con mas texto </p>
+            </div>
+          </section>
+
+          <p class="col" id="mensajes"></p>
+          <!-- ////////////////////////////////// -->
+        </div>
+      </div>
+
+
+      <div class="col-md-4" id="salidas">
+        <p id="pantalla" style="overflow:scroll;height:198px;width:340px;  overflow-x: auto;">
+        <center style="display:block;" class="modoPrograma" id="textModKernel"> <strong>Modo kernel</strong> </center>
+        <center style="display:none;" class="modoPrograma" id="textModUser"> <strong>Modo Usuario</strong> </center>
+        <div id="limpioImpresora"></div>
+          <center style="overflow:scroll;height:235px;width:270px;  "><p id="laimpre">    aqui </p></center>
+      </div>
+   
+      <div class="col-md-2" id="LaMemoria">
+
+        <select id="memoriaJs" style="display: none;" size="20">
+
+        </select>
+      </div>
+
+    </div>
+
+
+    <!-- bloque lista -->
+    <!-- <select name="Cars" size="5">
+      <option value="Merceders" style="background-color: purple;"> Merceeeders </option>
+      <option value="BMW"> BMW </option>
+      <option value="Jaguar"> Jaguar </option>
+      <option value="Lamborghini"> Lamborghini </option>
+      <option value="Ferrari"> Ferrari </option>
+      <option value="Ford"> Ford </option>
+    </select> -->
+
+
+
+
+    <!-- <textarea id="contenido" cols="30" rows="10"></textarea> -->
+    <!-- <textarea id="contenido2" cols="30" rows="10"></textarea> -->
+
+
+  </div>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+
+</html>
